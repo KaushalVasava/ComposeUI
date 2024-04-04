@@ -9,6 +9,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.kaushalvasava.app.composeui.screen.AuthenticationScreen
 import com.kaushalvasava.app.composeui.screen.ProductDetailScreen
 import com.kaushalvasava.app.composeui.screen.ProductsScreen
 
@@ -16,7 +17,7 @@ import com.kaushalvasava.app.composeui.screen.ProductsScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    startDestination: String = NavigationItem.PRODUCTS,
+    startDestination: String = NavigationItem.AUTHENTICATION,
 ) {
     NavHost(
         modifier = modifier,
@@ -47,6 +48,9 @@ fun AppNavHost(
             )
         }
     ) {
+        composable(NavigationItem.AUTHENTICATION) {
+            AuthenticationScreen(navController)
+        }
         composable(NavigationItem.PRODUCTS) {
             ProductsScreen(navController)
         }

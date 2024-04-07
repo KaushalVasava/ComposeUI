@@ -61,6 +61,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.kaushalvasava.app.composeui.ui.navigation.NavigationItem
 import kotlinx.coroutines.delay
 
 @Preview
@@ -373,7 +374,9 @@ fun ProductDetailScreen(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Blue
                     ),
-                    onClick = {}
+                    onClick = {
+                        navController.navigate(NavigationItem.ORDERS)
+                    }
                 ) {
                     Icon(Icons.Rounded.ShoppingCart, contentDescription = null, tint = Color.White)
                     Text("Add to Cart")
